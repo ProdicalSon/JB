@@ -3,7 +3,7 @@ function initiatePayment() {
     document.getElementById("modal").style.display = "flex";
 }
 
-// Handle STK push (mockup for now)
+// Handle STK push 
 function sendSTKPush() {
     const phone = document.getElementById("phone").value;
     const amount = document.getElementById("amount").value;
