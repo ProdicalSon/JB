@@ -1,0 +1,266 @@
+/* Reset and Base Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffd700, #ffffff, #1e90ff);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 5vh 2vw;
+    overflow-x: hidden;
+}
+
+
+/* Container */
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 8vw;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.container button {
+    background: #1e90ff;
+    color: white;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.container button:hover {
+    transform: scale(1.05);
+}
+
+
+/* Modal */
+
+.modal {
+    display: none;
+    /* hidden until button is clicked */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.modal-content button {
+    background: green;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+    background: darkgreen;
+}
+
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background: radial-gradient(circle at 30% 30%, #1e90ff, #0077cc);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: float 10s infinite ease-in;
+    z-index: 1;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #333;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20vh) translateX(20px);
+        opacity: 0;
+    }
+}
+
+.balloon:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.balloon:nth-child(4) {
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(5) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Balloons */
+
+.balloon {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, #1e90ff, #0077cc);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: float 10s infinite ease-in;
+    z-index: 1;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #333;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20vh) translateX(20px);
+        opacity: 0;
+    }
+}
+
+.balloon:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.balloon:nth-child(4) {
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(5) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+
+/* Responsive Text */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 10vw;
+    }
+    .modal-content input {
+        font-size: 0.95em;
+    }
+    .container button {
+        font-size: 1em;
+        padding: 0.8em 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    p {
+        font-size: 1.1em;
+    }
+    .balloon {
+        width: 30px;
+        height: 45px;
+    }
+}

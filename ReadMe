@@ -1,0 +1,6 @@
+birthday-landing/
+├── index.html
+├── style.css
+├── script.js
+├── stkpush.php
+└── .env               # Optional: Stores M-Pesa credentials securely
